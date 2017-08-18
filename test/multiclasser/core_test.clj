@@ -3,10 +3,10 @@
             [multiclasser.core :refer :all]))
 (def classes
   [(hash-map :name "Onion Knight"
-    :levels [["Fight", "Flee"], ["Weep"]]),
-    (hash-map :name "Lumberjack"
-              :levels [["Wield Axe", "Beard"], ["Wolfslayer"]])
-    ])
+             :levels [["Fight", "Flee"], ["Weep"]]),
+   (hash-map :name "Lumberjack"
+             :levels [["Wield Axe", "Beard"], ["Wolfslayer"]])
+   ])
 
 (deftest verify-matching-profession
   (testing "Empty list has no matching professions"
