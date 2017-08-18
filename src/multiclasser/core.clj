@@ -1,6 +1,7 @@
 (ns multiclasser.core)
 
-(defn matching-professions
+(defn matching-profession
   [profession known-professions]
-  (let [contains-name? (fn [some-profession ] (= profession (:name some-profession)))]
-    filter contains-name? known-professions))
+  (-> (filter #(= (:name %) profession) known-professions) first))
+
+

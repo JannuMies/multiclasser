@@ -8,11 +8,11 @@
               :levels [["Wield Axe", "Beard"], ["Wolfslayer"]])
     ])
 
-(deftest verify-matching-professions
+(deftest verify-matching-profession
   (testing "Empty list has no matching professions"
-    (is (empty? (matching-professions "Some profession" []))))
-  (testing "Fetching Onion Knight returns only one item"
-    (is (= (matching-professions "Onion Knight" classes) (first classes))))
+    (is (empty? (matching-profession "Some profession" []))))
   (testing "Fetching with a non-existing profession returns an empty sequnence."
-    (is (empty? (matching-professions "This doesn't exist" classes))))
+    (is (empty? (matching-profession "This doesn't exist" classes))))
+  (testing "Fetching Lumberjack returns Lumberjack"
+    (is (= (second classes) (matching-profession "Lumberjack" classes))))
   )
