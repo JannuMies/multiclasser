@@ -1,6 +1,6 @@
 (ns multiclasser.core)
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn matching-professions
+  [profession known-professions]
+  (let [contains-name? (fn [some-profession ] (= profession (:name some-profession)))]
+    filter contains-name? known-professions))
